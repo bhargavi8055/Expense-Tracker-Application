@@ -11,6 +11,7 @@ export class ExchangeRatesComponent implements OnInit{
 
   constructor(private _exchangeRatesService:ExchangeRatesService){}
   exchangeRates:any;
+  conversionRates:any;
   ngOnInit(): void {
     this.getExchangeRates();
   }
@@ -18,6 +19,7 @@ export class ExchangeRatesComponent implements OnInit{
     this._exchangeRatesService.getExchangeRates().subscribe({
       next:(res)=>{
         this.exchangeRates=res;
+        this.conversionRates=this.exchangeRates.conversion_rates;
         console.log("exchangerates::",this.exchangeRates)
       },
       error:(err)=>{
