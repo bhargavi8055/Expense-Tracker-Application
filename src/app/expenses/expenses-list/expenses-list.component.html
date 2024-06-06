@@ -1,0 +1,34 @@
+<div class="page-container">
+    <div class="table-container">
+        <div class="table-header">
+            <h2>List of Expenses</h2>
+            <button mat-raised-button (click)="openAddExpense()" class="add-expense-button" style="padding: 8px 16px;
+            background-color: #007bff; 
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;">Add Expense</button>
+        </div>
+        <table *ngIf="expensesList && expensesList.length > 0; else noExpensesMessage">
+            <tr class="first-row">
+              <th class="center">Item Name</th>
+              <th class="center">No Of Items</th>
+              <th class="center">Item Price (₹)</th>
+              <th class="center">Action</th>
+              <th></th>
+            </tr>
+            <tr *ngFor="let item of expensesList">
+              <td class="center" data-title="Item Name">{{item.itemName}}</td>
+              <td class="center" data-title="No Of Items">{{item.noOfItems}}</td>
+              <td class="center" data-title="Item Price (₹)">{{item.itemPrice}}</td>
+              <td class="center"><button style="background-color: green;color: white;" (click)="openEditForm(item)" mat-raised-button >Edit</button></td>
+              <td class="center"><button style="background-color: red;color: white;" (click)="deleteExpense(item.id)" mat-raised-button>Delete</button></td>
+            </tr>
+            
+          </table>
+          <ng-template #noExpensesMessage>
+            <div class="no-users-message">No Expenses available.</div>
+        </ng-template>
+    </div>
+</div>
+

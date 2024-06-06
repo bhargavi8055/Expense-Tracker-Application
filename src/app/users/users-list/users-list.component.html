@@ -1,0 +1,31 @@
+
+<div class="page-container">
+    <div class="table-container">
+        <div class="table-header">
+            <h2>List of Users</h2>
+            <button mat-raised-button (click)="openAddUser()" class="add-button">Add User</button>
+        </div>
+        <table *ngIf="usersList && usersList.length > 0; else noUsersMessage">
+            <tr class="first-row">
+              <th class="center">User Name</th>
+              <th class="center">User Email</th>
+              <th class="center">User Image</th>
+              <th class="center">Action</th>
+            </tr>
+            <tr *ngFor="let user of usersList">
+              <td class="center" data-title="User Name">{{user.userName}}</td>
+              <td class="center" data-title="User Email">{{user.email}}</td>
+              <td class="center" data-title="User Image">
+                <button (click)="viewUserImage(user)" mat-raised-button>View Image</button>
+              </td>
+              <td class="center"><button style="background-color: green;color: white;" (click)="openEditForm(user)" mat-raised-button >Edit</button></td>
+              <!-- <td class="center"><button style="background-color: red;color: white;" (click)="deleteUser(user.id)" mat-raised-button>Delete</button></td> -->
+            </tr>
+            
+          </table>
+          <ng-template #noUsersMessage>
+            <div class="no-users-message">No users available.</div>
+        </ng-template>
+    </div>
+    
+</div>

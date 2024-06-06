@@ -1,0 +1,73 @@
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Set a minimum height to cover the viewport */
+  }
+  
+  .container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    max-width: 600px; /* Optional: Set a maximum width for the container */
+  }
+  
+  /* Your existing styles for .exchange-rate-row, .exchange-rate-key, and .exchange-rate-value */
+  .exchange-rate-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px; /* Space between rows */
+  }
+  
+  .exchange-rate-key,
+  .exchange-rate-value {
+    flex: 1; /* Each takes up equal space */
+    padding: 8px; /* Optional padding for better spacing */
+  }
+  
+  .exchange-rate-key {
+    text-align: left; /* Align text to the left */
+  }
+  
+  .exchange-rate-value {
+    text-align: right; /* Align text to the right */
+  }
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Set a minimum height to cover the viewport */
+  }
+  
+  .message-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    max-width: 600px; /* Optional: Set a maximum width for the container */
+  }
+  
+  /* Your existing styles for .exchange-rate-row, .exchange-rate-key, and .exchange-rate-value */
+  .exchange-rate-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px; /* Space between rows */
+  }
+  
+  .exchange-rate-key,
+  .exchange-rate-value {
+    flex: 1; /* Each takes up equal space */
+    padding: 8px; /* Optional padding for better spacing */
+  }
+  
+  .exchange-rate-key {
+    text-align: left; /* Align text to the left */
+  }
+  
+  .exchange-rate-value {
+    text-align: right; /* Align text to the right */
+  }
+  

@@ -1,0 +1,30 @@
+<div mat-dialog-title>
+    <h1>Add User Form</h1>
+</div>
+<form [formGroup]="userForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>User Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Bhargavi" formControlName="userName">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Ex. xxx@gmail.com" formControlName="email">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <input type="file" (change)="onFileSelected($event)" accept="image/*" >
+        </div>
+        <!-- Display uploaded image if needed -->
+        <div class="row" *ngIf="imageUrl">
+            <img [src]="imageUrl" alt="Uploaded Image">
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}}</button>
+    </div>
+</form>
