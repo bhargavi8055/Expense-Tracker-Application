@@ -1,12 +1,20 @@
 <div *ngIf="exchangeRates" class="center-content">
     <div class="container">
-        <div><h2 style="background: #3f51b5;
-            color: white;
-            border: 1px solid #3f51b5;
-            border-radius: 5px;">Exchange Rates</h2></div>
+        <div>
+            <h2 style="background: #3f51b5; color: white; border: 1px solid #3f51b5; border-radius: 5px;">
+                Exchange Rates
+            </h2>
+        </div>
         <div *ngFor="let exchangerate of exchangeRates | keyvalue" class="exchange-rate-row">
             <div class="exchange-rate-key"><strong>{{ exchangerate.key }}:</strong></div>
-            <div class="exchange-rate-value">{{ exchangerate.value }}</div>
+            <div class="exchange-rate-value" *ngIf="exchangerate.key === 'conversion_rates'">
+                <div *ngFor="let conversion of conversionRates | keyvalue" >
+                    {{conversion.key}}: {{conversion.value}}
+                </div>
+            </div>
+            <div class="exchange-rate-value" *ngIf="exchangerate.key !== 'conversion_rates'">
+                {{ exchangerate.value }}
+            </div>
         </div>
     </div>
 </div>
@@ -16,4 +24,3 @@
         <h2>Sorry !!! API Key has been Expired</h2>
     </div>
 </div>
-
